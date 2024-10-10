@@ -1,0 +1,50 @@
+Interfaces y clases abstractas
+	Modificador Abstract:
+	-> Solo indica el comportamiento , o que una clase derivada debe plantear una implementación.
+	->Da la posibilidad de declarar clases que definen como se utiliza, sin tener que implementar metodos.
+	-> Las subclases de una CA deben sobreescribir los metodos abstractos.
+	->No se puede instanciar una clase abstracta pero si crear referencia de ellas.
+	
+	Ejemplo:
+        abtract class Persona{
+                protected String nombre;
+                protected int edad;
+                public Perona(String nombre, int edad){
+                        this.nombre=nombre;
+                        this.edad=edad;
+                }
+                public abstract void presentarse();
+                public int obtenerEdad(){
+                        return edad;
+                }
+        }//fin de la clase Persona
+	class Estudiante extends Persona{
+		private String carrera;
+		public Estudiante(String nombre, int edad, String carrera){
+			super(nombre,edad);
+			this.carrera=carrera;
+		}
+		@Override
+		public void presentarse(){
+			System.out.println("\n\tSoy "+nombre+" tengo "+edad+" años y estudio "+carrera+".");
+		}
+	}
+	public class EjemploClaseAbstracta{
+		public static void main(String[] args){
+			Persona estudiante=new Estudiante("Sam",20,"Lic. en Ciencias de la Computacion");
+			estudiante.presentarse();
+		}
+	}
+______________________________________________________________
+	Metodo Abstracto
+	
+	->Un metodo abstracto no tiene implementación.
+		public abstract metodo();
+	->Todas las clases que heredan de la clase abstracta tienen la obligación de implementar el metodo abstracto.
+	
+		
+	Interfaz
+	->Clase que denota comportamiento
+	-> Permite "simular" herencia multiple
+	->No es instanciable(no se puede crear objetos a partir de la interfaz)
+	-> Sus metodos son publicos

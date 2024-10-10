@@ -1,0 +1,32 @@
+Java utiliza programación orientada a objetos(POO) medianta la costrucción de clases y objetos, estos ultimos contienen atributos(caracteristicas) y metodos(funcionalidades u operaciones).
+
+Por ejemplo el objeto "Telefono" puede contener los atributos de:
+	Numero
+	País
+	Portador
+	etc...
+Y sus metodos:
+	Llamar
+	Mensajear
+	Mostrar numero
+______________________________________________________________________
+Codigo:
+
+public class Main{
+	public static void main(String[] args){
+		Phone telefono=new Phone();
+		telefono.llamar(222322);
+	}
+}
+class Phone{
+	private int numero=252323;
+	private String portador="Diego";
+	public Phone(int numero, String portador){
+		this.numero=numero;
+		this.portador=portador;
+	}
+	public void llamar(int num2){
+		System.out.println("\n\t"+ this.portador+" llamando a "+num2);
+		System.out.println("\n\t"+this.numero+" llamando a"+num2);
+	}
+}
